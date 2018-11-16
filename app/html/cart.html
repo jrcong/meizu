@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车</title>
+	<link rel="stylesheet" type="text/css" href="/css/cart.css">
+</head>
+<body>
+	<header></header>
+	<div class="contain">
+		<div id="main">
+			<div class="box1" style="display: none">
+				<h2>购物车里面还没有商品，赶紧去选购吧！</h2>
+				<a href="/html/list.html">返回商城首页</a>
+			</div>
+			<div class="box2">
+				<table class="cart-header">
+					<tbody>
+						<tr>
+							<td class = "cart-select">
+							<input type="checkbox" name="" id="checkbox">全选</td>
+							<td class = "cart-price">单价（元）</td>
+							<td class = "cart-number">数量</td>
+							<td class = "cart-total">小计(元)</td>
+						</tr>
+					</tbody>
+				</table>
+				<ul class="cart-list">
+					<li class="li"></li>
+						<script type = "text/html" id="pro-template">
+							{{each products item i}}
+							<table class="merchant-body">
+								<tr class="cart-product">
+								
+										<td class = "cart-select">
+											<input type="checkbox" name="" id="checkbox">
+											<p>{{ item.name }}</p>
+										</td>
+										<td class = "cart-price">{{item.price}}</td>
+										<td class = "cart-number">
+											<div class="product-num">
+												<button class="prev">－</button>
+												<div class="num">
+													<input type="text" value="1">
+												</div>
+												<button class="next">＋</button>
+											</div>
+										</td>
+										<td class = "cart-total">小计(元)</td>
+										<td class = "cart-ctrl">删除</td>
+									
+								</tr>
+								
+							</table>
+							{{/each}}
+					</script>
+				</ul>
+				<p class="zongjia">总共：<input type="text"></p>
+			</div>
+		</div>
+	</div>
+	<footer></footer>
+	<script type="text/javascript" src="/libs/require/require.js" data-main="/js/cart.js"></script>
+</body>
+</html>

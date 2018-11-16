@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="/css/list.css">
+</head>
+<body>
+	<header></header>
+	<p class="nav"><a href="../index.html">首页</a>>
+	<a href="list.html">全部商品</a>>
+	<span>手机</span></p>
+	<div class="box">
+		<div class="nav1">
+		<p>
+			<span>屏幕尺寸：</span>
+			<a href="javascript:;">全部</a>
+			<a href="javascript:;">5.2英寸</a>
+			<a href="javascript:;">5.5英寸</a>
+			<a href="javascript:;">5.7英寸</a>
+			<a href="javascript:;">5.46英寸</a>
+			<a href="javascript:;">5.95英寸</a>
+			<a href="javascript:;">6.0英寸</a>
+			<a href="javascript:;">6.2英寸</a>
+		</p>
+		<p>
+			<span>机身内存：</span>
+			<a href="javascript:;">全部</a>
+			<a href="javascript:;">32G</a>
+			<a href="javascript:;">64G</a>
+			<a href="javascript:;">128G</a>
+			<a href="javascript:;">256G</a>
+		</p>
+	</div>
+	</div>
+	
+	<div id="products">
+		<ul id="proList"></ul>
+			<script type="text/html" id="pro-template">
+			{{each products item i}}
+				<div style="width: 300px;height:416px;float: left;background: url({{item.src}}) background:#fff">
+					<div class="pic" style=""><img src="{{ item.img }}" alt=""></div>
+					
+					<p class="name">{{ item.name }}</p>
+					<p class="fine">{{ item.fine }}</p>
+					<p class="price">{{ item.price }}</p>
+					<a href="/html/detail.html?id={{ item.id }}"></a>
+				</div>
+			{{/each}}
+
+			</script>
+	<!-- 		<script type="text/html" id="pro-template">
+	
+	{{each products}}
+		<li style="width: 200px;background: #ccc;float: left;margin-left: 20px;">
+			<div class="pic"><img src="{{ $value.img }}" alt=""></div>
+			<p class="name">{{ $value.name }}</p>
+			<p class="fine">{{ $value.fine }}</p>
+			<p class="price">{{ $value.price }}</p>
+		</li>
+	{{/each}}
+	
+	</script>
+			 -->
+	</div>
+	<footer>
+		
+	</footer>
+	<script type="text/javascript" src="/libs/require/require.js" data-main="/js/list.js"></script>
+</body>
+</html>
